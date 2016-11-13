@@ -49,12 +49,13 @@ albo błąd w przypadku gdy:
 }
 ```
 
-### `POST /sessions`
+### `POST /access_tokens`
 
-Tworzy nową sesję użytkownika i zwraca nam token autoryzacyjny na podstawie
-emaila/loginu i hasła użytkownika. Obsługujemy zarówno logowanie przez email
-i przez login, ale wymagane jest żeby chociaż jeden z tych kluczy się pojawił.
-Jeżeli zostaną przesłane oba to użyty będzie adres email.
+Tworzy i zwraca nowy token użytkownika na podstawie emaila/loginu
+i hasła użytkownika. Obsługujemy zarówno logowanie przez email
+jak i przez login, ale wymagane jest żeby chociaż jeden z tych
+kluczy się pojawił. Jeżeli zostaną przesłane oba to użyty będzie
+adres email.
 
 #### Przykładowe zapytanie
 ```json
@@ -92,9 +93,11 @@ Jeżeli zostaną przesłane oba to użyty będzie adres email.
 }
 ```
 
-### `PATCH /sessions`
+### `PATCH /access_tokens`
 
-Odświeża token autoryzacyjny na podstawie starego tokenu. Jeżeli nie mamy starego tokenu, lub stary token nie jest już aktywny, powinniśmy użyć zasobu `POST /sessions`.
+Odświeża token autoryzacyjny na podstawie starego tokenu. Jeżeli nie
+mamy starego tokenu, lub stary token nie jest już aktywny,
+powinniśmy użyć zasobu `POST /access_tokens`.
 
 #### Przykładowe zapytanie
 ```json
