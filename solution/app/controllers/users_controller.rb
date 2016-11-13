@@ -6,7 +6,7 @@ class UsersController < ApplicationController
     if user.valid?
       user.save!
       token = CreateTokenService.new(user).call
-      render json: { access_token: token }, status: :created
+      render json: token, status: :created
     else
       render json: { errors: user.errors.full_messages }, status: :bad_request
     end
