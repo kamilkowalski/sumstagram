@@ -29,7 +29,7 @@ albo błąd w przypadku gdy:
 }
 ```
 
-#### `200 OK`
+#### `201 Created`
 ```json
 {
   "access_token": {
@@ -65,7 +65,7 @@ adres email.
 }
 ```
 
-#### `200 OK`
+#### `201 Created`
 ```json
 {
   "access_token": {
@@ -84,7 +84,7 @@ adres email.
 }
 ```
 
-#### `400 Bad Request`
+#### `404 Not Found`
 ```json
 {
   "errors": [
@@ -151,7 +151,7 @@ i zminimalizuje liczbę endpointów.
 }
 ```
 
-#### `200 OK`
+#### `201 Created`
 ```js
 // Pusta odpowiedź
 ```
@@ -268,7 +268,7 @@ Dodaje komentarz do zdjęcia o podanym numerze ID.
 }
 ```
 
-#### `200 OK`
+#### `201 Created`
 ```js
 // Pusta odpowiedź
 ```
