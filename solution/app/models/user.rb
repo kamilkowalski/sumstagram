@@ -1,5 +1,8 @@
 class User < ApplicationRecord
   has_one :access_token
+  has_many :photos
+  has_many :comments
+
   has_secure_password
   
   validates :username, :email, presence: true, uniqueness: true
