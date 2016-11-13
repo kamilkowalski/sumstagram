@@ -140,13 +140,14 @@ Dodaje nowe zdjęcie. Zdjęcie jest przekazane jako atrybut w dokumencie JSON
 przesłanym do serwera. Zdjęcie musi być w formacie JPEG. W celu przesłania
 jednego dokumentu zamiast rozbijać zapytanie na dwa osobne, kodujemy zdjęcie za
 pomocą Base64. To zwiększy rozmiar zdjęcia o 33% ale ułatwi nam pracę
-i zminimalizuje liczbę endpointów.
+i zminimalizuje liczbę endpointów. Dane obrazka muszą też zawierać schemat Base64,
+to jest `data:image/jpg;base64,DANE_OBRAZKA`.
 
 #### Przykładowe zapytanie
 ```json
 {
   "access_token": "0123456789",
-  "encoded_data": "data:image/jpg;base64,Bq6D2jTssAEmiPkwIm03CVZvm11C4U96f\nMAEkSbatjTFGl1nCWVmpjTGm3obU1wf4NwsAAAAAAAAAAAAAAAAAAAAAAAAA\nAAAAAAAAAAC+Vf0H3Tix078qfCwAAAAASUVORK5CYII=\n",
+  "encoded_image": "data:image/jpg;base64,Bq6D2jTssAEmiPkwIm03CVZvm11C4U96f\nMAEkSbatjTFGl1nCWVmpjTGm3obU1wf4NwsAAAAAAAAAAAAAAAAAAAAAAAAA\nAAAAAAAAAAC+Vf0H3Tix078qfCwAAAAASUVORK5CYII=\n",
   "comment": "Lubię #koty #cats #caturday #warsaw #warszawa #TheCakeIsALie"
 }
 ```
