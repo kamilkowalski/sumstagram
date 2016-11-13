@@ -4,11 +4,14 @@ class CreateTokenService
   end
   
   def call
-    AccessToken.create!(
-      code: generate_code,
-      expires_at: 2.weeks.from_now,
-      user: @user
-    )
+    ActiveRecord::Base.transaction do
+      @user.access_token.destroy! if @user.access_token
+
+      @user.create_access_token!(
+        code: generate_code,
+        expires_at: 2.weeks.from_now
+      )
+    end
   end
   
   private
