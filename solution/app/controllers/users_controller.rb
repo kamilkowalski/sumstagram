@@ -1,4 +1,6 @@
 class UsersController < ApplicationController
+  skip_before_action :check_access_token_presence, :check_access_token_expiration, only: [:create]
+
   def create
     user_params = params.permit(:username, :email, :password)
     user = User.new(user_params)

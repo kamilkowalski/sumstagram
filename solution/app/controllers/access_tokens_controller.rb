@@ -1,4 +1,6 @@
 class AccessTokensController < ApplicationController
+  skip_before_action :check_access_token_presence, :check_access_token_expiration, only: [:create]
+
   def create
     if params[:email].present?
       user = User.find_by(email: params[:email])
@@ -19,15 +21,7 @@ class AccessTokensController < ApplicationController
   end
 
   def update
-    token = AccessToken.find_by(code: params[:access_token])
-
-    if !token
-      render json: { errors: ["Musisz podać istniejący token autoryzacyjny"] }, status: :bad_request
-    elsif token.expires_at < Time.current
-      render json: { errors: ["Token autoryzacyjny wygasł"] }, status: :unauthorized
-    else
-      token = CreateTokenService.new(token.user).call
-      render json: token
-    end
+    token = CreateTokenService.new(current_user).call
+    render json: token
   end
 end
