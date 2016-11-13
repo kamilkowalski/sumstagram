@@ -1,5 +1,11 @@
 class PhotosController < ApplicationController
   def index
+    limit = params.fetch(:limit, 25)
+    offset = params.fetch(:offset, 0)
+    
+    photos = Photo.limit(limit).offset(offset)
+    
+    render json: photos
   end
 
   def create
