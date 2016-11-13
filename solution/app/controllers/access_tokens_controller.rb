@@ -19,5 +19,15 @@ class AccessTokensController < ApplicationController
   end
 
   def update
+    token = AccessToken.find_by(code: params[:access_token])
+
+    if !token
+      render json: { errors: ["Musisz podać token autoryzacyjny"] }, status: :bad_request
+    elsif token.expires_at < Time.current
+      render json: { errors: ["Token autoryzacyjny wygasł"] }, status: :unauthorized
+    else
+      token = CreateTokenService.new(token.user).call
+      render json: token
+    end
   end
 end
