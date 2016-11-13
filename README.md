@@ -146,7 +146,7 @@ i zminimalizuje liczbę endpointów.
 ```json
 {
   "access_token": "0123456789",
-  "encoded_data": "Bq6D2jTssAEmiPkwIm03CVZvm11C4U96f\nMAEkSbatjTFGl1nCWVmpjTGm3obU1wf4NwsAAAAAAAAAAAAAAAAAAAAAAAAA\nAAAAAAAAAAC+Vf0H3Tix078qfCwAAAAASUVORK5CYII=\n",
+  "encoded_data": "data:image/jpg;base64,Bq6D2jTssAEmiPkwIm03CVZvm11C4U96f\nMAEkSbatjTFGl1nCWVmpjTGm3obU1wf4NwsAAAAAAAAAAAAAAAAAAAAAAAAA\nAAAAAAAAAAC+Vf0H3Tix078qfCwAAAAASUVORK5CYII=\n",
   "comment": "Lubię #koty #cats #caturday #warsaw #warszawa #TheCakeIsALie"
 }
 ```
