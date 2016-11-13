@@ -295,7 +295,9 @@ listy zdjęć, parametry `limit` i `offset`, a domyślny `limit` wynosi 25.
 #### Przykładowe zapytanie
 ```json
 {
-  "access_token": "0123456789"
+  "access_token": "0123456789",
+  "limit": 15,
+  "offset": 30
 }
 ```
 
@@ -324,6 +326,15 @@ listy zdjęć, parametry `limit` i `offset`, a domyślny `limit` wynosi 25.
         "username": "kondratk"
       }
     }
+  ]
+}
+```
+
+#### `401 Unauthorized`
+```json
+{
+  "errors": [
+    "Niepoprawny token autoryzacyjny"
   ]
 }
 ```
