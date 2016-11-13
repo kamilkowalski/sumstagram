@@ -22,7 +22,7 @@ class AccessTokensController < ApplicationController
     token = AccessToken.find_by(code: params[:access_token])
 
     if !token
-      render json: { errors: ["Musisz podać token autoryzacyjny"] }, status: :bad_request
+      render json: { errors: ["Musisz podać istniejący token autoryzacyjny"] }, status: :bad_request
     elsif token.expires_at < Time.current
       render json: { errors: ["Token autoryzacyjny wygasł"] }, status: :unauthorized
     else
