@@ -1,4 +1,5 @@
-# Sumstagram
+
+![Sumstagram Logo](logo.png?raw=true)
 
 Warsztat mający na celu naukę tworzenia API przy pomocy frameworka Ruby on Rails.
 System, który będziemy tworzyć to okrojona implementacja Instagrama. Całość
