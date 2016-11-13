@@ -19,7 +19,7 @@ class ApplicationController < ActionController::API
     @current_token ||= AccessToken.find_by(code: params[:access_token])
   end
   
-  def current_user
-    @current_user ||= current_token.try(:user)
+  def current_token_user
+    @current_token_user ||= current_token.try(:user)
   end
 end

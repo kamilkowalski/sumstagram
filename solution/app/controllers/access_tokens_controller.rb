@@ -21,7 +21,7 @@ class AccessTokensController < ApplicationController
   end
 
   def update
-    token = CreateTokenService.new(current_user).call
+    token = CreateTokenService.new(current_token_user).call
     render json: token
   end
 end
