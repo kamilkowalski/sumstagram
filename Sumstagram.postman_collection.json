@@ -1,0 +1,31 @@
+{
+	"variables": [],
+	"info": {
+		"name": "Sumstagram",
+		"_postman_id": "162d8675-cceb-4234-cf4a-dff1f214b0da",
+		"description": "Kolekcja do testowania API Sumstagram",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Create User",
+			"request": {
+				"url": "https://sumstagram-api-kamilkowalski.c9users.io/users",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"username\": \"kamilk\",\n\t\"email\": \"kamil@kamilkowalski.pl\",\n\t\"password\": \"test1234\"\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}
