@@ -1,5 +1,11 @@
 class CommentsController < ApplicationController
   def index
+    limit = params.fetch(:limit, 25)
+    offset = params.fetch(:offset, 0)
+    
+    comments = current_photo.comments.limit(limit).offset(offset).order(created_at: :asc)
+    
+    render json: comments
   end
 
   def create
