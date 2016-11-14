@@ -1,11 +1,13 @@
 
 ![Sumstagram Logo](logo.png?raw=true)
 
-Warsztat mający na celu naukę tworzenia API przy pomocy frameworka Ruby on Rails.
+Warsztaty mające na celu naukę tworzenia API przy pomocy frameworka Ruby on Rails.
 System, który będziemy tworzyć to okrojona implementacja Instagrama. Całość
 przygotowana na zajęcia projektowe specjalizacji
 [Sieci Urządzeń Mobilnych](https://www.facebook.com/Sieci-Urz%C4%85dze%C5%84-Mobilnych-211004225604000/)
 przy [Polsko-Japońskiej Akademii Technik Komputerowych](http://pja.edu.pl/).
+
+**Tekst warsztatów dostępny pod adresem: https://kamilkowalski.gitbooks.io/sumstagram-api/content/**
 
 ## Dokumentacja API
 
@@ -34,7 +36,7 @@ albo błąd w przypadku gdy:
 {
   "access_token": {
     "code": "0123456789",
-    "expires_at": "2016-12-11 11:34:00"
+    "expires_at": "2016-12-11T11:34:00.148Z"
   }
 }
 ```
@@ -70,7 +72,7 @@ adres email.
 {
   "access_token": {
     "code": "0123456789",
-    "expires_at": "2016-12-11 22:12:00"
+    "expires_at": "2016-12-11T22:12:00.148Z"
   }
 }
 ```
@@ -111,7 +113,7 @@ powinniśmy użyć zasobu `POST /access_tokens`.
 {
   "access_token": {
     "code": "9876543210",
-    "expires_at": "2017-01-14 11:43:33"
+    "expires_at": "2017-01-14T11:43:33.148Z"
   }
 }
 ```
@@ -187,7 +189,7 @@ Każde zdjęcie to obiekt z następującymi kluczami:
 | Klucz      | Znaczenie                                |
 |------------|------------------------------------------|
 | id         | Identyfikator zdjęcia                    |
-| url        | Adres HTTPS zdjęcia                      |
+| image_url  | Adres HTTPS zdjęcia                      |
 | created_at | Data utworzenia zdjęcia                  |
 | author     | Informacje o autorze zdjęcia             |
 | comments   | Lista pierwszych 5 komentarzy do zdjęcia |
@@ -221,22 +223,22 @@ Każdy autor (zdjęcia oraz komentarza) to obiekt z następującymi kluczami:
   "photos": [
     {
       "id": 15,
-      "url": "https://s3.amazonaws.com/foo.png",
-      "created_at": "2016-11-13 11:41:00",
+      "image_url": "https://sumstagram-api.c9.io/cat.jpg",
+      "created_at": "2016-11-13T11:41:00.148Z",
       "author": {
         "username": "kamilk"
       },
       "comments": [
         {
           "content": "Lubię #koty #cats #caturday #warsaw #warszawa #TheCakeIsALie",
-          "created_at": "2016-11-13 11:41:00",
+          "created_at": "2016-11-13T11:41:00.148Z",
           "author": {
             "username": "kamilk"
           }
         },
         {
           "content": "Fajny kot! 😻",
-          "created_at": "2016-11-14 09:00:15",
+          "created_at": "2016-11-14T09:00:15.148Z",
           "author": {
             "username": "ania90"
           }
@@ -312,21 +314,21 @@ listy zdjęć, parametry `limit` i `offset`, a domyślny `limit` wynosi 25.
   "comments": [
     {
       "content": "Lubię #koty #cats #caturday #warsaw #warszawa #TheCakeIsALie",
-      "created_at": "2016-11-13 11:41:00",
+      "created_at": "2016-11-13T11:41:00.148Z",
       "author": {
         "username": "kamilk"
       }
     },
     {
       "content": "Fajny kot! 😻",
-      "created_at": "2016-11-14 09:00:15",
+      "created_at": "2016-11-14T09:00:15.148Z",
       "author": {
         "username": "ania90"
       }
     },
     {
       "content": "Blee, wolę psy 🐩🐾",
-      "created_at": "2016-11-14 11:41:55",
+      "created_at": "2016-11-14T11:41:55.148Z",
       "author": {
         "username": "kondratk"
       }
