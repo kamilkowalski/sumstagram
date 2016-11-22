@@ -1,5 +1,5 @@
 
-![Sumstagram Logo](logo.png?raw=true)
+<img src="logo.png" height="86" alt="Sumstagram Logo" />
 
 Warsztaty mające na celu naukę tworzenia API przy pomocy frameworka Ruby on Rails.
 System, który będziemy tworzyć to okrojona implementacja Instagrama. Całość
